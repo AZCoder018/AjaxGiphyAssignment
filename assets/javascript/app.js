@@ -1,65 +1,54 @@
 
-$( document ).ready(function() {
-    // An array of actions, new actions will be pushed into this array;
-    var actions = ["Back to the Future", "E.T. the Extra-Terrestrial", "Ferris Bueller's Day Off", "Big", "Aliens", "The Blues Brothers", "Rain Man", "Ghostbusters", 
-    "Platoon", "Splash","Raiders of the Lost Ark", "The Thing", "The Empire Strikes Back", "Star Trek II: The Wrath of Kahn", "Poltergeist", "War Games"];
-    // Creating Functions & Methods
-    // Function that displays all gif buttons
+$(document).ready(function() {
+
+//Create an array and save it to a variable called 'topics'.
+    
+    var topics = ["Back to the Future", "E.T. the Extra-Terrestrial", "Ferris Bueller's Day Off", "Big", "Aliens", "The Blues Brothers", "Rain Man", "Ghostbusters", 
+    "Platoon","Raiders of the Lost Ark", "The Terminator", "The Empire Strikes Back", "Star Trek II: The Wrath of Kahn", "Poltergeist", "War Games"];
+   
+//Take topics from above array and create buttons in HTML, using a loop that appends a button for each string in the array.
+
     function displayGifButtons(){
-        $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
-        for (var i = 0; i < actions.length; i++){
+        $("#htmlButtons").empty(); // erasing anything in this div id so that it doesnt duplicate the results
+        for (var i = 0; i < topics.length; i++){
             var gifButton = $("<button>");
             gifButton.addClass("action");
             gifButton.addClass("btn btn-primary")
-            gifButton.attr("data-name", actions[i]);
-            gifButton.text(actions[i]);
-            $("#gifButtonsView").append(gifButton);
+            gifButton.attr("data-name", topics[i]);
+            gifButton.text(topics[i]);
+            $("#htmlButtons").append(gifButton);
         }
     }
-    // Function to add a new action button
+
+// Function to add a new action button and not allow for blank buttons
+
     function addNewButton(){
         $("#addGif").on("click", function(){
         var action = $("#action-input").val().trim();
         if (action == ""){
-          return false; // added so user cannot add a blank button
+          return false; 
         }
-        actions.push(action);
+        topics.push(action);
     
         displayGifButtons();
         return false;
         });
     }
-    // Function to remove last action button
-        // Doesnt work properly yet removes all of the added buttons
-        // rather than just the last
-    function removeLastButton(){
-        $("removeGif").on("click", function(){
-        actions.pop(action);
-        displayGifButtons();
-        return false;
-        });
-    }
-    // Function that displays all of the gifs
+
+  // Function to get gifs from Giphy
     function displayGifs(){
         var action = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&limit=10&api_key=gsm1vkfoKsWleCuSdfbPrD7nbjA83682";
-        console.log(queryURL); // displays the constructed url
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=dc6zaTOxFJmzC&limit=10";
         $.ajax({
             url: queryURL,
             method: 'GET'
         })
     
-    
-    
-    
         
-        .done(function(response) {
-            console.log(response); // console test to make sure something returns
+    .done(function(response) {
             $("#gifsView").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
             var results = response.data; //shows results of gifs
-            if (results == ""){
-              alert("There isn't a gif for this selected button");
-            }
+   
             for (var i=0; i<results.length; i++){
     
                 var gifDiv = $("<div>"); //div for the gifs to go inside
@@ -84,7 +73,6 @@ $( document ).ready(function() {
     // Calling Functions & Methods
     displayGifButtons(); // displays list of actions already created
     addNewButton();
-    removeLastButton();
     // Document Event Listeners
     $(document).on("click", ".action", displayGifs);
     $(document).on("click", ".image", function(){

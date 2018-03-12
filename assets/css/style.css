@@ -1,11 +1,49 @@
 body {
     background: url('../images/future(1).jpg');
-  ;
+    background-attachment: fixed;
+    margin-top: 1px;
 }
 
-* {
-	box-sizing: border-box;
+.jumbotron {
+
+    margin-top: 1px;
+    padding-top: 1px;
+    border-top: 1px;
 }
+
+#header {
+
+    position: fixed;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 800px;
+    font-size: 80px;
+    text-align: center;
+    color: red;
+    text-shadow: 3px 3px 3px yellow;
+    margin-top: 1px;
+    padding: 0px;
+    width: 100%;
+
+
+}
+
+#htmlButtons {
+
+    margin-right: 0px;
+
+}
+
+#gifsView {
+
+    margin-right: 0px;
+
+}
+#gif-form {
+
+    float: right;
+
+}
+
 img { 
     height: 150px;
     width: 150px;
