@@ -1,5 +1,8 @@
 body {
-
     background: url('../images/future(1).jpg');
+}
 
+#jumbotron {
+    text-align: center;
+    background-color: white;
 }
