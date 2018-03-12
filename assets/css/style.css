@@ -2,27 +2,22 @@ body {
     background: url('../images/future(1).jpg');
     background-attachment: fixed;
     margin-top: 1px;
-}
-
-.jumbotron {
-
-    margin-top: 1px;
-    padding-top: 1px;
-    border-top: 1px;
+    opacity: 1.5; 
 }
 
 #header {
 
-    position: fixed;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 800px;
-    font-size: 80px;
+    font-size: 70px;
     text-align: center;
     color: red;
     text-shadow: 3px 3px 3px yellow;
     margin-top: 1px;
     padding: 0px;
     width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 0px;
 
 
 }
@@ -30,17 +25,37 @@ body {
 #htmlButtons {
 
     margin-right: 0px;
+    margin-top: 0px;
 
 }
 
 #gifsView {
 
+    margin-top: 60px;
+    font-weight: 1000pt; 
+    font-style: bold;
+    background-color: white;
+    color: white;
+    text-shadow: 5px 5px 5px black;
     margin-right: 0px;
 
 }
+
 #gif-form {
 
-    float: right;
+    margin-top: 60px; 
+
+}
+
+#h3 {
+
+    color: red;
+
+}
+
+#addFav {
+
+    font-weight: 1000px;
 
 }
 
@@ -51,8 +66,12 @@ img {
 .btn {
     /* adding spacing between each button*/
     margin: 3px;
-    background-color: #999999;
-    border-color: #fff;
+    font-weight: 1000px;
+    text-shadow: .15px .15px .15px black;
+    color: black; 
+    background-color: gainsboro;
+    border-color: gray;
+    border-width: 2px;
 }
 .gifDiv{
     /* making the images go in one line rather than block & adding spacing between the images*/
@@ -67,18 +86,7 @@ img {
 .jumbotron {
     background-color: inherit;
 }
-.jumbotron .h1, .jumbotron h1 {
-    text-align: center;
-}
-#copyright{
-	font-size: 14px;
-}
-div#footer {
-	clear: both;
-	margin-top: 40px;
-	position: center;
-	bottom: 0;
-	left: 0;
-	text-align: center;
-}
+
+
+
 
