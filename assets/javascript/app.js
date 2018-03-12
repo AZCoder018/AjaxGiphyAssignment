@@ -6,10 +6,11 @@ $(document).ready(function() {
     var topics = ["Back to the Future", "Scarface", "Ferris Bueller's Day Off", "Amadeus", "Aliens", "The Blues Brothers", "Rain Man", "Ghostbusters", 
     "Platoon","Raiders of the Lost Ark", "The Terminator", "The Empire Strikes Back", "Star Trek II: The Wrath of Kahn", "Poltergeist", "War Games", "Big"];
    
-//Take topics from above array and create buttons in HTML, using a loop that appends a button for each string in the array.
+/*Take topics from above array and create buttons in HTML, using a loop that appends a 
+button for each string in the array; start with empty div */
 
     function displayGifButtons(){
-        $("#htmlButtons").empty(); // erasing anything in this div id so that it doesnt duplicate the results
+        $("#htmlButtons").empty(); 
         for (var i = 0; i < topics.length; i++){
             var gifButton = $("<button>");
             gifButton.addClass("action");
@@ -35,7 +36,7 @@ $(document).ready(function() {
         });
     }
 
-  // Function to get gifs from Giphy
+  // Function to get gifs from Giphy; change to https
     function displayGifs(){
         var action = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -44,43 +45,48 @@ $(document).ready(function() {
             method: 'GET'
         })
     
-        
+  //Need to clear gifsView container and send new gifs div, ratings, and gif attributes to HTML
+
     .done(function(response) {
-            $("#gifsView").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
-            var results = response.data; //shows results of gifs
+            $("#gifsView").empty(); 
+            var results = response.data; 
    
             for (var i=0; i<results.length; i++){
     
-                var gifDiv = $("<div>"); //div for the gifs to go inside
+                var gifDiv = $("<div>"); 
                 gifDiv.addClass("gifDiv");
-                // pulling rating of gif
+    
                 var gifRating = $("<p>").text("Rating: " + results[i].rating);
                 gifDiv.append(gifRating);
-                // pulling gif
+
                 var gifImage = $("<img>");
-                gifImage.attr("src", results[i].images.fixed_height_small_still.url); // still image stored into src of image
-                gifImage.attr("data-still",results[i].images.fixed_height_small_still.url); // still image
-                gifImage.attr("data-animate",results[i].images.fixed_height_small.url); // animated image
-                gifImage.attr("data-state", "still"); // set the image state
+                gifImage.attr("src", results[i].images.fixed_height_small_still.url); 
+                gifImage.attr("data-still",results[i].images.fixed_height_small_still.url);
+                gifImage.attr("data-animate",results[i].images.fixed_height_small.url); 
+                gifImage.attr("data-state", "still");
                 gifImage.addClass("image");
                 gifDiv.append(gifImage);
-                // pulling still image of gif
-                // adding div of gifs to gifsView div
+            
+            
                 $("#gifsView").prepend(gifDiv);
             }
         });
     }
-    // Calling Functions & Methods
-    displayGifButtons(); // displays list of actions already created
+
+    displayGifButtons(); 
     addNewButton();
-    // Document Event Listeners
+
+    //OnClick for animating image and stii
+    
     $(document).on("click", ".action", displayGifs);
     $(document).on("click", ".image", function(){
         var state = $(this).attr('data-state');
         if ( state == 'still'){
             $(this).attr('src', $(this).data('animate'));
             $(this).attr('data-state', 'animate');
-        }else{
+         }
+        
+        else{
             $(this).attr('src', $(this).data('still'));
             $(this).attr('data-state', 'still');
         }
