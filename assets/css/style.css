@@ -36,14 +36,26 @@ body {
     font-style: bold;
     background-color: white;
     color: white;
-    text-shadow: 5px 5px 5px black;
+    text-shadow: 1px 1px 1px black;
     margin-right: 0px;
+    margin-left: 25px;
 
 }
 
 #gif-form {
 
-    margin-top: 60px; 
+    margin-top: 80px; 
+    margin-left: 30px;
+    font-weight: 1000px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:red;
+    background: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: solid;
+    border-color: white;
 
 }
 
@@ -53,15 +65,9 @@ body {
 
 }
 
-#addFav {
-
-    font-weight: 1000px;
-
-}
-
 img { 
     height: 150px;
-    width: 150px;
+    width: 165px;
 }
 .btn {
     /* adding spacing between each button*/
@@ -82,10 +88,6 @@ img {
 	background-color: #fff;
 	opacity: 0.8;
 	padding: 20px;
-}
-.jumbotron {
-    background-color: inherit;
-}
 
 
 
