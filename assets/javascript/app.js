@@ -3,8 +3,8 @@ $(document).ready(function() {
 
 //Create an array and save it to a variable called 'topics'.
     
-    var topics = ["Back to the Future", "E.T. the Extra-Terrestrial", "Ferris Bueller's Day Off", "Big", "Aliens", "The Blues Brothers", "Rain Man", "Ghostbusters", 
-    "Platoon","Raiders of the Lost Ark", "The Terminator", "The Empire Strikes Back", "Star Trek II: The Wrath of Kahn", "Poltergeist", "War Games"];
+    var topics = ["Back to the Future", "Scarface", "Ferris Bueller's Day Off", "Amadeus", "Aliens", "The Blues Brothers", "Rain Man", "Ghostbusters", 
+    "Platoon","Raiders of the Lost Ark", "The Terminator", "The Empire Strikes Back", "Star Trek II: The Wrath of Kahn", "Poltergeist", "War Games", "Big"];
    
 //Take topics from above array and create buttons in HTML, using a loop that appends a button for each string in the array.
 

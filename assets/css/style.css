@@ -67,10 +67,10 @@ body {
 
 img { 
     height: 150px;
-    width: 165px;
+    width: 150px;
 }
+
 .btn {
-    /* adding spacing between each button*/
     margin: 3px;
     font-weight: 1000px;
     text-shadow: .15px .15px .15px black;
@@ -79,15 +79,11 @@ img {
     border-color: gray;
     border-width: 2px;
 }
+
 .gifDiv{
-    /* making the images go in one line rather than block & adding spacing between the images*/
     float: left;
     margin: 3px;
 }
-.container {
-	background-color: #fff;
-	opacity: 0.8;
-	padding: 20px;
 
 
 
