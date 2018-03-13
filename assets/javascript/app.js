@@ -45,7 +45,7 @@ button for each string in the array; start with empty div */
             method: 'GET'
         })
     
-  //Need to clear gifsView container and send new gifs div, ratings, and gif attributes to HTML
+  //Need to clear gifsView container and send new gifs div, ratings,  to HTML
 
     .done(function(response) {
             $("#gifsView").empty(); 
@@ -66,8 +66,7 @@ button for each string in the array; start with empty div */
                 gifImage.attr("data-state", "still");
                 gifImage.addClass("image");
                 gifDiv.append(gifImage);
-            
-            
+        
                 $("#gifsView").prepend(gifDiv);
             }
         });
@@ -76,7 +75,7 @@ button for each string in the array; start with empty div */
     displayGifButtons(); 
     addNewButton();
 
-    //OnClick for animating image and stii
+    //OnClick for animating gif and for reverting gif to 'still'
     
     $(document).on("click", ".action", displayGifs);
     $(document).on("click", ".image", function(){
