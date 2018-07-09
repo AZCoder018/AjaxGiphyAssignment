@@ -47,6 +47,12 @@ button for each string in the array; start with empty div */
     
   //Need to clear gifsView container and send new gifs div, ratings,  to HTML
 
+
+
+
+
+
+
     .done(function(response) {
             $("#gifsView").empty(); 
             var results = response.data; 
